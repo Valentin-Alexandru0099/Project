@@ -44,7 +44,7 @@ def get_connection_data(db_name=None):
     }
 
 
-def execute_select(statement, variables=None, fetchall=True):
+def execute_query(statement, variables=None, fetchall=True):
     """
     Execute SELECT statement optionally parameterized.
     Use fetchall=False to get back one value (fetchone)
