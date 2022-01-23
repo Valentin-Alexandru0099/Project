@@ -6,9 +6,52 @@
 
 #root {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 div.span{
     text-align: right;
     float: right;
+}
+
+button.left_side_up{
+    padding: 15px 50px;
+    width: 100% ;
+}
+
+button.right_side_up{
+    padding: 15px 50px;
+    width: 100%;
+}
+
+div.right_side{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    border: black 3px solid;
+    background-image: url("/static/images/orc_background.jpg");
+    background-size: cover;
+}
+
+div.left_side{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    border: black 3px solid;
+    background-image: url("/static/images/orc_background.jpg");
+    background-size: cover;
+    
+}
+
+div.btn-group{
+    background-color: black;
+    flex-direction: column;
+}
+
+
+div.left_side_ups, div.left_side, div.right_side, div.right_side_ups{
+    display: inline-block;
 }
