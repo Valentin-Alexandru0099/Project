@@ -26,7 +26,10 @@ app.secret_key = os.getenv("SECRET")
 
 @app.route("/")
 def index():
-    return render_template("register-login.html")
+    if session.get('id'):
+        return render_template("game.html")
+    else:
+        return render_template("register-login.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -62,7 +65,7 @@ def login():
             if user["email"] == request.form["email"] and check_password_hash(user["password"],request.form["password"]):
                 session["id"] = user["id"]
                 session["username"] = user["username"]
-                return render_template('game.html')
+                return redirect(url_for("index"))
         flash("Incorect email or password!", "sing_id_error")
         return redirect(url_for("register"))
     return redirect(url_for("index"))

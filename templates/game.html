@@ -1,1 +1,21 @@
 {% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/game.css') }}">
+
+{% endblock %}
+{% block content %}
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <p class="navbar-brand">RACE CLICKER</p>
+        <div class="span">
+        <span class="navbar-brand" href="{{url_for('logout')}}">Logout</span>
+        <span class="navbar-brand">Logged as: {{session.username}}</span>
+        </div>
+      </nav>
+</div>
+
+<div class="container" id="root">
+
+
+</div>
+{% endblock %}

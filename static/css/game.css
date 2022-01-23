@@ -1,0 +1,14 @@
+/* body{
+    background-image: url("/static/gifs/background.gif");
+    background-size: cover;
+} */
+
+
+#root {
+    display: flex;
+}
+
+div.span{
+    text-align: right;
+    float: right;
+}
