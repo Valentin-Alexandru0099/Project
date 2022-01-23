@@ -9,35 +9,64 @@
 {% block content %}
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="{{ url_for('register') }}" method="POST">
 			<h1>Create Account</h1>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+			{% with messages = get_flashed_messages(category_filter=["error"]) %}
+  				{% if messages %}
+    				{% for message in messages %}
+					<div class="alert alert-danger alert-dismissible fade show" role="alert" id='msg'>
+						{{ message }} <span class="closespan">X</span>
+					</div>
+    				{% endfor %}
+			  	{% endif %}
+			{% endwith %}
+			<input type="text" placeholder="Username" name="username" value="" required/>
+			<input type="email" placeholder="Email" name="email" value="" required/>
+			<input type="password" placeholder="Password" name="password" value="" minlength="6" required/>
+			<input type="password" placeholder="Confirm Password"  name="confirm_password" minlength="6" value="" required/>
+			<button type="submit">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form action="{{ url_for('login') }}", method="POST">
 			<h1>Sign in</h1>
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
+			{% with messages = get_flashed_messages(category_filter=["sing_in"]) %}
+				{% if messages %}
+			  		{% for message in messages %}
+						<div class="alert alert-success alert-dismissible fade show" role="alert" id='msg'>
+							{{ message }} <span class="closespan">X</span>
+						</div>
+			  		{% endfor %}
+				{% endif %}
+	  		{% endwith %}
+			  {% with messages = get_flashed_messages(category_filter=["sing_id_error"]) %}
+				{% if messages %}
+			  		{% for message in messages %}
+						<div class="alert alert-danger alert-dismissible fade show" role="alert" id='msg'>
+							{{ message }} <span class="closespan">X</span>
+						</div>
+			  		{% endfor %}
+				{% endif %}
+	  		{% endwith %}
+			<input type="email" placeholder="Email" name="email" value="" required/>
+			<input type="password" placeholder="Password" name="password" value="" required/>
+			<!-- <a href="#">Forgot your password?</a> -->
 			<button>Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
+				<h1>Hello, Clicker!</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
+				<p>Already have an account ?<button class="ghost" id="signIn">Sign In rightaway</button> </p>
+				
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+				<h1>Welcome Back!</h1>
+				<p>Enter your personal details and start clicking !</p>
+				<p> Don't have an account ? <button class="ghost" id="signUp">Sign Up Now</button>  </p>
+				
 			</div>
 		</div>
 	</div>
