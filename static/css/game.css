@@ -33,7 +33,7 @@ div.right_side{
     display: flex;
     align-self: center;
     border: black 3px solid;
-    background-image: url("/static/images/human_background.jpg");
+    background-image: url("/static/images/sides_background/dwarf_background.jpg");
     background-size: 440px 700px;
     background-repeat: no-repeat;
 }
@@ -44,7 +44,7 @@ div.left_side{
     display: flex;
     align-self: center;
     border: black 3px solid;
-    background-image: url("/static/images/orc_background.jpg");
+    background-image: url("/static/images/sides_background/elf_background.jpg");
     background-size: 440px 700px;
     background-repeat: no-repeat;
     
@@ -56,14 +56,16 @@ div.btn-group{
     width: 200px;
 }
 
-div.click-area-background{
-    display: flex;
-    align-items: center;
+
+div.side-click-left, div.side-click-right{
+    background-color: black;
+    color: white;
+    font-size: larger;
+    font-weight: 1000;
+    text-align: center;
 }
 
-button.click-area{
-    width: 50%;
-}
+
 
 div.left_side_ups, div.left_side, div.right_side, div.right_side_ups{
     display: inline-block;
