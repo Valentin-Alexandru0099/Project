@@ -152,7 +152,10 @@ def save_data(user_id, data):
         WHERE user_id = %(user_id)s;
         UPDATE left_side_ups
         SET b1 = %(b1)s,
-        b2 = %(b2)s
+        b2 = %(b2)s,
+        b3 = %(b3)s,
+        b4 = %(b4)s,
+        b5 = %(b5)s
         WHERE user_id = %(user_id)s
         RETURNING user_id;
         """,{
@@ -160,5 +163,10 @@ def save_data(user_id, data):
             "left_side_click": data['left_side_click'],
             "left_side_click_power": data['left_side_click_power'],
             "b1": data["b1"],
-            "b2": data["b2"]
+            "b2": data["b2"],
+            "b3": data["b3"],
+            "b4": data["b4"],
+            "b5": data["b5"],
+
+
         },False)

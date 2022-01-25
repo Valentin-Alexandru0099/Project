@@ -13,8 +13,7 @@ export const autos = async () =>{
             let b9 = leftUps.children[8].children[0].innerText
             let b10 = leftUps.children[9].children[0].innerText
             let clicks = document.querySelector(".left-clicks")
-            clicks.innerText = parseInt(clicks.innerText) + parseInt(b2)*10
-            console.log(clicks.innerText)
+            clicks.innerText = parseInt(clicks.innerText) + b2*10 +b3*50+ b4*1000 + b5*10000
         }, 1000)
         
     }, 1000);
