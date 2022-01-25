@@ -1,6 +1,5 @@
 import { dataHandler } from "../data/data.js"
 
-
 const imgHuman = "url('/static/images/sides_background/human_background.jpg')"
 const humanUps = "url('/static/images/buttons_background/human-button.jpg')"
 

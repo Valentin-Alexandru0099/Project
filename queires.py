@@ -25,11 +25,11 @@ def add_user(data):
 def init_user_stats(user):
     data_manager.execute_query(
         """
-        INSERT INTO user_stats(user_id, left_side_race, right_side_race, left_side_click, right_side_click)
-        VALUES(%(user)s, %(init)s, %(init)s, %(init)s, %(init)s)
+        INSERT INTO user_stats(user_id, left_side_race, right_side_race, left_side_click, right_side_click,left_side_click,right_side_click)
+        VALUES(%(user)s, %(init)s, %(init)s, %(init)s, %(init)s, %(init1)s, %(init1)s)
         RETURNING *;
         """,
-        {"user": user["id"], "init": 0},
+        {"user": user["id"], "init": 0, "init1": 1},
         False,
     )
     data_manager.execute_query(
@@ -67,8 +67,10 @@ def get_stats(data):
         SELECT  us.user_id,
                 us.left_side_race,
                 us.left_side_click,
+                us.left_side_click_power,
                 us.right_side_race,
                 us.right_side_click,
+                us.right_side_click_power,
                 l.b1,
                 l.b2,
                 l.b3,
@@ -145,7 +147,8 @@ def save_data(user_id, data):
     a = data_manager.execute_query(
         """
         UPDATE user_stats
-        SET left_side_click = %(left_side_click)s
+        SET left_side_click = %(left_side_click)s,
+        left_side_click_power = %(left_side_click_power)s
         WHERE user_id = %(user_id)s;
         UPDATE left_side_ups
         SET b1 = %(b1)s
@@ -154,5 +157,6 @@ def save_data(user_id, data):
         """,{
             "user_id": user_id,
             "left_side_click": data['left_side_click'],
+            "left_side_click_power": data['left_side_click_power'],
             "b1": data["b1"],
         },False)

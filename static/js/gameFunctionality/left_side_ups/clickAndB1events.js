@@ -1,7 +1,8 @@
-let leftClickPower = 1;
-let initialUpgrade = 10;
+import { dataHandler } from "../../data/data.js";
 
-
+export let INITIALUPGRADE = 10;
+const stats = await dataHandler.getStats()
+export let LEFTCLICKPOWER = stats.left_side_click_power
 const leftUps = document.querySelector('.btn-group[data-div-id="1"]')
 
 
@@ -9,7 +10,7 @@ export const clickAndB1events = async () =>{
     const clickArea = document.querySelector('.left_side')
     clickArea.onclick = function () {
         let clicks = document.querySelector('.left-clicks')
-        clicks.innerText = parseInt(clicks.innerText) + leftClickPower
+        clicks.innerText = parseInt(clicks.innerText) + LEFTCLICKPOWER
     }
     let b1 = leftUps.children[0]
     b1.onclick = function(){
@@ -19,25 +20,25 @@ export const clickAndB1events = async () =>{
             if ( parseInt(leftClicks.innerText) >= ( upNum1*upNum1*upNum1 )) {
                 b1.children[0].innerText = parseInt(b1.children[0].innerText) + 1
                 leftClicks.innerText = parseInt(leftClicks.innerText) - (upNum1*upNum1*upNum1)
-                leftClickPower += 1
+                LEFTCLICKPOWER += 1
             }
         }else if (upNum1 > 1 ){
-            if ( parseInt(leftClicks.innerText) >= ( (initialUpgrade+initialUpgrade)*upNum1 )) {
+            if ( parseInt(leftClicks.innerText) >= ( (INITIALUPGRADE+INITIALUPGRADE)*upNum1 )) {
                 b1.children[0].innerText = parseInt(b1.children[0].innerText) + 1
-                leftClicks.innerText = parseInt(leftClicks.innerText) - (initialUpgrade+initialUpgrade)*upNum1
-                leftClickPower += 1
+                leftClicks.innerText = parseInt(leftClicks.innerText) - (INITIALUPGRADE+INITIALUPGRADE)*upNum1
+                LEFTCLICKPOWER += 1
             } 
         }else if(upNum1 == 1){
-            if ( parseInt(leftClicks.innerText) >= ( initialUpgrade+initialUpgrade )) {
+            if ( parseInt(leftClicks.innerText) >= ( INITIALUPGRADE+INITIALUPGRADE )) {
                 b1.children[0].innerText = parseInt(b1.children[0].innerText) + 1
-                leftClicks.innerText = parseInt(leftClicks.innerText) - (initialUpgrade+initialUpgrade)
-                leftClickPower += 1
+                leftClicks.innerText = parseInt(leftClicks.innerText) - (INITIALUPGRADE+INITIALUPGRADE)
+                LEFTCLICKPOWER += 1
             } 
         }else{
-            if ( parseInt(leftClicks.innerText) >= initialUpgrade) {
+            if ( parseInt(leftClicks.innerText) >= INITIALUPGRADE) {
                 b1.children[0].innerText = parseInt(b1.children[0].innerText) + 1
-                leftClicks.innerText = parseInt(leftClicks.innerText) - initialUpgrade
-                leftClickPower += 1
+                leftClicks.innerText = parseInt(leftClicks.innerText) - INITIALUPGRADE
+                LEFTCLICKPOWER += 1
             } 
         }
     }
@@ -52,11 +53,11 @@ function showCost(){
     if (upNum1 > 10){
         cost1.setAttribute('data-content', `Cost: ${upNum1*upNum1*upNum1 } clicks `)
     }else if (upNum1 > 1 ){
-        cost1.setAttribute('data-content', `Cost: ${(initialUpgrade+initialUpgrade)*upNum1} clicks`)
+        cost1.setAttribute('data-content', `Cost: ${(INITIALUPGRADE+INITIALUPGRADE)*upNum1} clicks`)
     }else if(upNum1 == 1){  
-        cost1.setAttribute('data-content', `Cost: ${initialUpgrade+initialUpgrade} clicks`)
+        cost1.setAttribute('data-content', `Cost: ${INITIALUPGRADE+INITIALUPGRADE} clicks`)
     }else{
-        cost1.setAttribute('data-content', `Cost: ${initialUpgrade} clicks`)
+        cost1.setAttribute('data-content', `Cost: ${INITIALUPGRADE} clicks`)
     }
 
     $('.left_side_up').popover({
