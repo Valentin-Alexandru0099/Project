@@ -11,6 +11,10 @@ export const dataHandler = {
       const response = await apiPut("/api/pickRace", data);
       return response;
     },
+    saveData: async function(data){
+      const response = await apiPut("/api/saveData", data);
+      return response;
+    }
 }
 
 

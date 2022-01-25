@@ -139,3 +139,20 @@ def race_data(race_id):
         {"race_id": race_id["left_side_race"]},
         False,
     )
+
+
+def save_data(user_id, data):
+    a = data_manager.execute_query(
+        """
+        UPDATE user_stats
+        SET left_side_click = %(left_side_click)s
+        WHERE user_id = %(user_id)s;
+        UPDATE left_side_ups
+        SET b1 = %(b1)s
+        WHERE user_id = %(user_id)s
+        RETURNING user_id;
+        """,{
+            "user_id": user_id,
+            "left_side_click": data['left_side_click'],
+            "b1": data["b1"],
+        },False)

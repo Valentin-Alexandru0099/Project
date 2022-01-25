@@ -100,6 +100,12 @@ def pick_race():
     return queires.race_data(race_id)
 
 
+
+@app.route("/api/saveData", methods=["PUT"])
+@json_response
+def save_data():
+    return queires.save_data(session["id"], request.json)
+
 def main():
     app.run(debug=True)
     # Serving the favicon
