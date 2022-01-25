@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/game.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/modal.css') }}">
 
+<script type="module" src="{{ url_for('static', filename='main.js') }}" defer></script>
 {% endblock %}
 {% block content %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -12,27 +14,47 @@
             </div>
     </nav>
 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#race-picker" hidden >
+</button>
+  
+  <div class="modal fade" id="race-picker" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        </div>
+        <div class="modal-body">
+          <button class="race" ></button>
+          <button class="race" ></button>
+          <button class="race" ></button>
+          <button class="race" ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 <div class="container" id="root">
-    <div class="btn-group">
-        <button class="left_side_up" data-left-id=""> sword</button>
-        <button class="left_side_up" data-left-id=""> training groung for morrons</button>
-        <button class="left_side_up" data-left-id=""> here</button>
-        <button class="left_side_up" data-left-id=""> here</button>
-        <button class="left_side_up" data-left-id=""> here</button>
-        <button class="left_side_up" data-left-id=""> here</button>
-        <button class="left_side_up" data-left-id=""> here</button>
-        <button class="left_side_up" data-left-id=""> here</button>
-        <button class="left_side_up" data-left-id=""> here</button>
-          <button class="left_side_up" data-left-id=""> here</button>
+    <div class="btn-group", data-div-id="1">
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
+        <button class="left_side_up"></button>
     </div>
 
 
 <div>
-    <div class="left_side">
+    <div class="left_side" type="button">
         <div class="click-area-background">
-            <div class="side-click-left">
-               Clicks: <span>12312312312312323</span>
+            <div class="side-click-left" hidden>
+               Clicks: <span class="left-clicks"></span>
             </div>
         </div>    
     </div>
@@ -43,8 +65,8 @@
 <div>
     <div class="right_side">
         <div class="click-area-background">
-            <div class="side-click-right">
-                Clicks: <span>12312312312312323</span>
+            <div class="side-click-right" hidden>
+                Clicks: <span class="right-clicks"></span>
              </div>
         </div>
     </div>
@@ -52,17 +74,17 @@
 
 
 
-    <div class="btn-group">
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
-        <button class="right_side_up" data-right-id=""> here</button>
+    <div class="btn-group" , data-div-id="2">
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
+        <button class="right_side_up"> here</button>
     </div>
 
 </div>
