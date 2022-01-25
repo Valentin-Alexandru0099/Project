@@ -8,6 +8,7 @@ export const saveData = async () =>{
             "left_side_click_power": LEFTCLICKPOWER,
             "left_side_click":document.querySelector('.left-clicks').innerText,
             "b1":document.querySelector('.left_side_up[data-button-id="1"]').children[0].innerText,
+            "b2":document.querySelector('.left_side_up[data-button-id="2"]').children[0].innerText,
     }
     await dataHandler.saveData(data)
     console.log(data)
