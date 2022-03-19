@@ -19,7 +19,7 @@ export const loadStats = async () =>{
     const stats = await dataHandler.getStats();
     if ( stats.left_side_race == 0) {
         const races = await dataHandler.getRaces();
-        $('#race-picker').modal('show');
+        $('#race-picker').modal('show'); // document.querySelectorALL // document.querySelector()
         const title = document.querySelector('.modal-title');
         const body = document.querySelector('.modal-body');
         title.innerText = 'Pick a race for left side';

@@ -25,7 +25,7 @@ def add_user(data):
 def init_user_stats(user):
     data_manager.execute_query(
         """
-        INSERT INTO user_stats(user_id, left_side_race, right_side_race, left_side_click, right_side_click,left_side_click,right_side_click)
+        INSERT INTO user_stats(user_id, left_side_race, right_side_race, left_side_click, right_side_click,left_side_click_power,right_side_click_power)
         VALUES(%(user)s, %(init)s, %(init)s, %(init)s, %(init)s, %(init1)s, %(init1)s)
         RETURNING *;
         """,
@@ -167,6 +167,8 @@ def save_data(user_id, data):
             "b3": data["b3"],
             "b4": data["b4"],
             "b5": data["b5"],
+            "b6": data["b6"],
+
 
 
         },False)

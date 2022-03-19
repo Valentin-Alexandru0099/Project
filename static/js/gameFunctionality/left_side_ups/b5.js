@@ -38,18 +38,18 @@ const b5UpCost = INITIALUPGRADE * 10000
     }
 
 function showCost(){
-    let cost4 = document.querySelector('.left_side_up[data-button-id="5"]')
+    let cost5 = document.querySelector('.left_side_up[data-button-id="5"]')
     let b5 = leftUps.children[4]
     let upNum5 = b5.children[0].innerHTML;
 
     if (upNum5 > 10){
-        cost4.setAttribute('data-content', `Cost: ${(b5UpCost*upNum5)*upNum5} clicks `)
+        cost5.setAttribute('data-content', `Cost: ${(b5UpCost*upNum5)*upNum5} clicks `)
     }else if (upNum5 > 1 ){
-        cost4.setAttribute('data-content', `Cost: ${(b5UpCost+b5UpCost)*upNum5} clicks`)
+        cost5.setAttribute('data-content', `Cost: ${(b5UpCost+b5UpCost)*upNum5} clicks`)
     }else if(upNum5 == 1){  
-        cost4.setAttribute('data-content', `Cost: ${b5UpCost+b5UpCost} clicks`)
+        cost5.setAttribute('data-content', `Cost: ${b5UpCost+b5UpCost} clicks`)
     }else{
-        cost4.setAttribute('data-content', `Cost: ${b5UpCost} clicks and you need 25 previous upgrades `)
+        cost5.setAttribute('data-content', `Cost: ${b5UpCost} clicks and you need 25 previous upgrades `)
     }
 
     $('.left_side_up').popover({

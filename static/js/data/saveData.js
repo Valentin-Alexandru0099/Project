@@ -12,6 +12,8 @@ export const saveData = async () =>{
             "b3":document.querySelector('.left_side_up[data-button-id="3"]').children[0].innerText,
             "b4":document.querySelector('.left_side_up[data-button-id="4"]').children[0].innerText,
             "b5":document.querySelector('.left_side_up[data-button-id="5"]').children[0].innerText,
+            "b6":document.querySelector('.left_side_up[data-button-id="6"]').children[0].innerText,
+
             
             
             
