@@ -1,18 +1,18 @@
 import { dataHandler } from "../data/data.js"
 
-const imgHuman = "url('/static/images/sides_background/human_background.jpg')"
+const imgHuman = "url('/static/images/race_background/human_background.jpg')"
 const humanUps = "url('/static/images/buttons_background/human-button.jpg')"
 
-const imgOrc = "url('/static/images/sides_background/orc_background.jpg')"
+const imgOrc = "url('/static/images/race_background/orc_background.jpg')"
 const orcUps = "url('/static/images/buttons_background/orc-button.jpg')"
 
-const imgElf = "url('/static/images/sides_background/elf_background.jpg')"
+const imgElf = "url('/static/images/race_background/elf_background.jpg')"
 const elfUps = "url('/static/images/buttons_background/elf-button.jpg')"
 
-const imgDwarf = "url('/static/images/sides_background/dwarf_background.jpg')"
+const imgDwarf = "url('/static/images/race_background/dwarf_background.jpg')"
 const dwarfUps = "url('/static/images/buttons_background/dwarf-button.jpg')"
 
-const imgDefault = "url('/static/images/sides_background/default.jpg')"
+const imgDefault = "url('/static/images/race_background/default.jpg')"
 
 
 export const loadStats = async () =>{
